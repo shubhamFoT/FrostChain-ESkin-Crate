@@ -236,7 +236,7 @@ frostchain-eskin-crate/
 | `.f3d` | Autodesk Fusion 360 |
 | `.step` | Any CAD package |
 | `.asc` | LTspice |
-| `.kicad_*` | KiCad  |
+| `.kicad_*` | KiCad 9.0 |
 
 
 
