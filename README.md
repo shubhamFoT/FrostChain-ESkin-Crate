@@ -220,7 +220,7 @@ frostchain-eskin-crate/
 | Half-bridge drift model (LTspice) | 🟡 Bridge + integrator cap; Σ-Δ loop model pending | `02_electronics/spice/` |
 | FEA | ⬜ Not yet added | `01_mechanical/fea/` |
 | KiCad project | ✅ Added | `02_electronics/kicad/` |
-| Verilog RTL + golden model | 🟡 Simulation added | n/a |
+| Verilog RTL + golden model | 🟡 Simulation added | `02_electronics` |
 | Prototype build and measured data | ⬜ Stage 3 | n/a |
 
 **Roadmap** (from the Stage 1 plan):
