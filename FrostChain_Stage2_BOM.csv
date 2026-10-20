@@ -1,0 +1,22 @@
+﻿S.No,Subsystem Category,Component,Exact Part No. / Specification,Schematic Ref,Qty,Sourcing Category,Verified Vendor & Lead Time,Unit Cost (INR),Total Cost (INR)
+1,Telemetry & FPGA Compute,FPGA Development Board,Sipeed Tang Nano 9K (Gowin GW1NR-LV9QN88PC6/I5),U3,1,Imported (India Stock),Robu.in / Evelta (4d local stock; 10d import),1650,1650
+2,Telemetry & FPGA Compute,Main Telemetry & Crypto MCU,Espressif ESP32-S3-WROOM-1-N8R2 DevKitC-1,U4,1,Local,Robu.in / Bhagirath Palace Delhi (2 days),580,580
+3,Telemetry & FPGA Compute,LTE (5G-Ready) + GNSS Modem,SIMCom SIM7600E-H 4G LTE Cat-1 / GNSS Breakout,M1,1,Domestic,Evelta / Robu.in (4 days),2250,2250
+4,"E-Skin, PCB & Passives",Digital Temp & RH Sensor,"Sensirion SHT31-DIS-B I2C Breakout (±0.2°C, ±2% RH)",U_SHT31,1,Local,Robu.in / Campus Component (2 days),320,320
+5,Peltier & Heatsinks,High-Current Peltier Driver,Infineon BTS7960 43A H-Bridge Module (IBT-2),U5,1,Local,Robu.in / Local Market (2 days),240,240
+6,Peltier & Heatsinks,Thermoelectric Cooler (Peltier),"TEC1-12706 (12V, 6A, Qmax 60W, 40×40×3.8 mm)",TEC1,1,Local,Robu.in / Local Market (2 days),190,190
+7,Power & Solar,Solar MPPT Charge Controller,CN3791 MPPT Solar Charger Board (18V PV Input),U_MPPT,1,Domestic,Robu.in /RareComponents (3 days),380,380
+8,Power & Solar,5.0V Logic Buck Converter,"LM2596S-5.0 DC-DC Step-Down Module (12.8V -> 5.0V, 3A)",U1/U2,1,Local,Local Electronics Market (1 day),85,85
+9,Power & Solar,12V -> 4.0V Modem Buck Converter,MP1584EN 3A Adjustable DC-DC Buck (12.8V -> 4.0V Peak),U6,1,Local,Local Electronics Market (1 day),75,75
+10,Power & Solar,LiFePO4 Battery Pack + 4S BMS,"4S 32700 LiFePO4 Pack (12.8V, 6Ah, 76.8Wh) + 4S 20A BMS",BT1,1,Domestic,Loom Solar / Robu.in (4 days),2350,2350
+11,Power & Solar,30W Flexible Solar PV Panel,30W 18V Semi-Flexible Monocrystalline ETFE Solar Panel,PV1,1,Domestic,Loom Solar / Indiamart (4 days),1650,1650
+12,"E-Skin, PCB & Passives",0.1% Precision Σ-Δ Resistors,100 kΩ ±0.1% 25ppm/°C Thin-Film SMD 0805 Resistor,"R_FB, R_REF",10,Domestic,Element14 India / Mouser (3 days),12,120
+13,"E-Skin, PCB & Passives",10k NTC Thermistor Probes,10 kΩ ±1% (B=3950K) Stainless Probe (Crate Core & Hot Sink),"TH_INT, TH_HOT",2,Local,Robu.in / Local Market (1 day),45,90
+14,"E-Skin, PCB & Passives",Σ-Δ Integrator Capacitor,10 nF 50V ±1% C0G/NP0 Ultra-Low-Drift Capacitor 0805,C_INT,5,Local,Element14 / Local Market (1 day),8,40
+15,"E-Skin, PCB & Passives",Bridge & Fan Switching MOSFETs,2N7002 SOT-23 NMOS (20ms Bridge) + IRLZ44N (12V Fan),"Q1, Q2",5,Local,Local Electronics Market (1 day),13,65
+16,Power & Solar,Primary Overcurrent Fuse,10A Automotive Blade Fuse + Waterproof Inline Holder,F1,1,Local,Local Auto/Electronics Market (1 day),45,45
+17,Crate & PCM Thermal Liner,EPS/VIP Insulated Crate Body,400×300×280 mm Food-Grade HDPE Crate + 25 mm EPS/VIP Liner,MECH-1,1,Domestic,Nilkamal / Indiamart Cold-Chain (5 days),1450,1450
+18,Crate & PCM Thermal Liner,4.5°C Phase Change Material Packs,0.45 kg HDPE-Encapsulated 4.5°C Organic Paraffin PCM Pack,PCM 1..4,4,Domestic,Pluss Advanced Tech / Indiamart (5 days),287.5,1150.0
+19,Peltier & Heatsinks,Dual 6061 Heatsinks + 12V Fan,Extruded Al 6061-T6 Cold/Hot Fin Blocks + 12V IP55 Brushless Fan,"HS_C, HS_H, M_FAN",1,Local,Local Market / Robu.in (2 days),620,620
+20,"E-Skin, PCB & Passives",Graphite E-Skin Tape + 2L FR4 PCB,Conductive Graphite Tape + Cu Foil Bus + 2-Layer PCB (LionCircuits),"R_ACT, R_DUM, PCB1",1,Domestic,LionCircuits / Amazon Business (5 days),850,850
+TOTAL,,Complete Stage 2 Prototype Build,,,40,95% Domestic,Max 5-10 Days,,14200.0
