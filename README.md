@@ -30,8 +30,7 @@
 7. [Safety](#-safety)
 8. [Repository map](#-repository-map)
 9. [Project status](#-project-status)
-10. [Opening and reproducing](#-opening-and-reproducing)
-11. [Team](#-team) · [License](#-license)
+10. [License](#-license)
 
 ---
 
