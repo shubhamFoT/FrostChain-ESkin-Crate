@@ -1,68 +1,256 @@
-# FrostChain E-Skin Crate: Tamper-Aware, AI-Verified Cold-Chain Crate for the First Mile
+<div align="center">
 
-[![Vishwakarma Awards 2026-27](https://img.shields.io/badge/Vishwakarma_Awards_2026--27-Stage_2_Shortlisted_Audit_Repo-0D9488?style=for-the-badge)](https://makerbhavanfoundation.org/)
-[![FPGA Target](https://img.shields.io/badge/FPGA-Gowin_GW1NR--9_(Tang_Nano_9K)-2563EB?style=for-the-badge)](./FrostChain_FPGA_RTL/)
-[![CAD Native](https://img.shields.io/badge/CAD-Autodesk_Fusion_(.f3d_%7C_.step)-D97706?style=for-the-badge)](./FrostChain_ESkin_Crate_v2.f3d)
+# ❄️ FrostChain E-Skin Crate
 
-> **Core Innovation:** Off-grid crate that holds **4 +/- 2 degC** via **4.5 degC Phase Change Material (PCM) + duty-limited solar Peltier cooling**, verifies handling and tamper (>= 100 uE step) using a **co-printed graphite E-skin active/dummy half-bridge + Tang Nano 9K FPGA (ratiometric Sigma-Delta ADC + INT8 TCN + CUSUM)**, and settles payments via an **on-chain Solidity smart contract**.
+### A tamper-aware, AI-verified cold-chain crate for the first mile
 
----
+*PCM + solar-Peltier cooling · printed graphite E-skin · FPGA ratiometric Σ-Δ ADC · INT8 edge AI · signed on-chain quality scoring*
 
-## 1. Stage 2 Jury Audit — Native File Verification Index
+![Vishwakarma Awards](https://img.shields.io/badge/Vishwakarma_Awards-2026--27-1f3a5f)
+![Stage](https://img.shields.io/badge/Stage-2_Submission-2b6cb0)
+![Status](https://img.shields.io/badge/Status-Design_%26_Simulation-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-| Engineering Subsystem | Native Audit File in Repository | Toolchain / Format | Verification Status |
-| :--- | :--- | :--- | :--- |
-| **3D Parametric CAD Assembly** | [`FrostChain_ESkin_Crate_v2.f3d`](./FrostChain_ESkin_Crate_v2.f3d) | Autodesk Fusion (`.f3d`) | 6 Parametric Subsystems |
-| **Neutral 3D CAD Exchange** | [`FrostChain_ESkin_Crate_v2.step`](./FrostChain_ESkin_Crate_v2.step) | ISO 10303-21 STEP (`.step`) | Full Crate + Solar Lid |
-| **3D CAD Isometric Render** | [`FrostChain_ESkin_Crate_v2_Final.png`](./FrostChain_ESkin_Crate_v2_Final.png) | Autodesk Fusion Render | Color-Coded Modules |
-| **Native KiCad v8 Schematic** | [`FrostChain_Circuit_Schematic_v2.kicad_sch`](./FrostChain_Circuit_Schematic_v2.kicad_sch) | KiCad EDA 8.0 (`.kicad_sch`) | Native Schematic Capture |
-| **EDA DRC / ERC Audit Log** | [`FrostChain_DRC_Audit_Report.rpt`](./FrostChain_DRC_Audit_Report.rpt) | KiCad DRC Report (`.rpt`) | **0 DRC / ERC Violations** |
-| **Full Schematic (PDF & PNG)** | [`FrostChain_Circuit_Schematic_v2.pdf`](./FrostChain_Circuit_Schematic_v2.pdf) / [`FrostChain_Circuit_Schematic_v2.png`](./FrostChain_Circuit_Schematic_v2.png) | Vector PDF & 300-DPI PNG | 5 Blocks + Power Tree + Pinout |
-| **SPICE Behavioural Deck** | [`FrostChain_ESkin_SigmaDelta.asc`](./FrostChain_ESkin_SigmaDelta.asc) | LTspice XVII / 24 (`.asc`) | Half-Bridge + Sigma-Delta Loop |
-| **FPGA Verilog RTL & Project** | [`FrostChain_FPGA_RTL/FrostChain_FPGA_RTL.gprj`](./FrostChain_FPGA_RTL/FrostChain_FPGA_RTL.gprj) | Gowin EDA V1.9 (`GW1NR-9`) | Synthesised & Routed @ 12 MHz |
-| **FPGA RTL Source & Pins** | [`FrostChain_FPGA_RTL/src/frostchain_sigma_delta_tcn.v`](./FrostChain_FPGA_RTL/src/frostchain_sigma_delta_tcn.v) | Verilog-2001 + `.cst` + `.sdc` | Sigma-Delta + CIC3 + INT8 TCN |
-| **Solidity Smart Contract** | [`FrostChainQualitySettlement.sol`](./FrostChainQualitySettlement.sol) | Solidity `^0.8.20` (`.sol`) | Tiered Payout & Tamper Escrow |
-| **Itemized Prototype BOM** | [`FrostChain_Stage2_BOM.xlsx`](./FrostChain_Stage2_BOM.xlsx) / [`FrostChain_Stage2_BOM.csv`](./FrostChain_Stage2_BOM.csv) | Excel (`.xlsx`) & CSV | 20 Items — **INR 14,190 Total** |
-| **Stage 1 Shortlisted Proposal** | [`FrostChain_E-Skin_Crate_Stage1_Proposal - Shubham.pdf`](./FrostChain_E-Skin_Crate_Stage1_Proposal%20-%20Shubham.pdf) | Official Stage 1 PDF | Shortlisted for Stage 2 |
+**Application ID:** `[APPLICATION ID]` · **Team ID:** `[TEAM ID]` · **Track:** `[TRACK]`
+
+<img src="01_mechanical/renders/FrostChain_ESkin_Crate_v2_Final.png" alt="FrostChain E-Skin Crate, CAD render" width="720">
+
+</div>
 
 ---
 
-## 2. 3D Parametric CAD Assembly
+## 📑 Contents
 
-![FrostChain 3D CAD Render](./FrostChain_ESkin_Crate_v2_Final.png)
-
-* **Outer Footprint:** `400 x 300 x 322 mm` (`280 mm` HDPE crate base + `42 mm` retrofit solar-Peltier lid)
-* **Wall Stack:** `4 mm` HDPE structural shell + `25 mm` EPS/VIP insulation ($R_{th} = 4.28\text{ K/W}$) + `4 x 0.45 kg` ($1.8\text{ kg}$ total, $378\text{ kJ}$) $4.5^\circ\text{C}$ paraffin PCM cassettes
-* **Volume, Payload & Mass:** `20.0 L` net usable volume (`27.4 L` gross) | **`12 kg` rated payload** | `6.4 kg` tare mass (`18.4 kg` loaded)
-
----
-
-## 3. System Electronics Schematic, Power Tree & FPGA Pinout
-
-![FrostChain Circuit Schematic](./FrostChain_Circuit_Schematic_v2.png)
-
----
-
-## 4. Simulation Verification Plots
-
-### A. Lumped Thermal-RC Hold Simulation (4 +/- 2 degC for 12 Hours at 40 degC Ambient)
-![Thermal RC Hold Plot](./FrostChain_Thermal_RC_Hold.png)
-
-### B. Edge-AI Drift & Creep Removal vs. Irreversible Tamper Detection (>= 100 uE)
-![AI Drift vs Tamper Plot](./FrostChain_AI_Drift_Tamper_Plot.png)
+1. [The problem](#-the-problem)
+2. [The solution](#-the-solution)
+3. [Simulation results](#-simulation-results)
+4. [Hardware](#-hardware)
+5. [Bill of materials](#-bill-of-materials)
+6. [Settlement logic](#-settlement-logic)
+7. [Safety](#-safety)
+8. [Repository map](#-repository-map)
+9. [Project status](#-project-status)
+10. [Opening and reproducing](#-opening-and-reproducing)
+11. [Team](#-team) · [License](#-license)
 
 ---
 
-## 5. Reproducing Synthesis & Simulations
+## 🍓 The problem
 
-```bash
-# Open-Source Yosys Synthesis Check for Gowin GW1NR-9 FPGA:
-yosys -p "read_verilog FrostChain_FPGA_RTL/src/frostchain_sigma_delta_tcn.v; synth_gowin -top frostchain_sigma_delta_tcn -json frostchain_netlist.json; stat"
+Fruit and vegetables are lost between the farm gate and the collection centre because no low-cost, off-grid crate both **holds produce near 4 °C** and **produces tamper-proof evidence** of its temperature and handling history. Without that evidence, quality disputes are settled by haggling, and the farmer is underpaid.
+
+> Official post-harvest loss estimates for India (ICAR-CIPHET 2015): fruits 6.7–15.9 %, vegetables 4.6–12.4 %.
+
+**Who it is for:** smallholder farmers and FPOs, first-mile aggregators, buyers and retailers, and berry, dairy or pharma shippers who need audited cold-chain proof.
+
+## 🧊 The solution
+
+One crate, four layers. Each layer feeds the next, and the AI sits where it turns cheap parts into trustworthy data.
+
+| Layer | What it does | Key parts |
+|---|---|---|
+| ❄️ **Cool** | PCM packs act as a passive thermal battery; a solar Peltier lid tops up only when the interior reaches 5 °C | 4 × 0.45 kg 4.5 °C paraffin PCM, TEC1-12706, 30 W PV, LiFePO4 |
+| 📡 **Sense** | A printed graphite active/dummy half-bridge on the lid seal and walls senses strain, rough handling, lid opening and tamper. The half-bridge cancels common-mode thermal/humidity drift | Graphite tape, Verilog Σ-Δ ADC on Tang Nano 9K |
+| 🧠 **Decide** | A fixed-point INT8 TCN removes residual drift and creep and separates reversible load from irreversible steps. A CUSUM + consensus gate suppresses false alarms | ~1.7 k parameters, 1 time-multiplexed MAC |
+| 🔗 **Settle** | ECDSA-signed events and GPS are pushed to a Solidity quality-score contract that decides the payout | ESP32-S3, SIM7600-class LTE + GNSS modem |
+
+```mermaid
+flowchart LR
+    subgraph SENSE["📡 Sense"]
+        EB["Graphite E-skin<br/>half-bridge"] --> ADC["Σ-Δ ratiometric ADC<br/>(FPGA)"]
+        NTC["NTC + SHT31<br/>temp / RH"] --> ADC
+    end
+    subgraph DECIDE["🧠 Decide (Tang Nano 9K)"]
+        ADC --> DEC["CIC³ + MA-5<br/>50 Hz null"]
+        DEC --> TCN["INT8 TCN"]
+        TCN --> CUSUM["CUSUM +<br/>consensus gate"]
+    end
+    subgraph COOL["❄️ Cool"]
+        TCN -- PELTIER_REQ --> ESP
+        ESP["ESP32-S3"] -- PWM --> DRV["BTS7960<br/>driver"] --> TEC["TEC1-12706<br/>Peltier lid"]
+    end
+    subgraph SETTLE["🔗 Settle"]
+        CUSUM -- "UART: events" --> ESP
+        ESP --> MODEM["LTE + GNSS<br/>modem"] --> SC["Solidity<br/>quality-score contract"]
+    end
+    PV["30 W PV"] --> MPPT --> BAT["12.8 V 6 Ah<br/>LiFePO4 + BMS"] --> ESP
 ```
 
+**Why graphite?** Printed graphite tape costs almost nothing but is unusable raw: its resistance drifts with temperature, humidity and creep by thousands of µε. The half-bridge plus a tiny INT8 network makes it trustworthy, so integrity sensing costs almost nothing.
+
+## 📊 Simulation results
+
+> ⚠️ **All results below are simulation or synthetic behavioural-model outputs.** They will be replaced with measured data from the prototype in later stages.
+
+### Thermal hold, lumped RC model
+
+<img src="03_models_and_plots/FrostChain_Thermal_RC_Hold.png" alt="Lumped thermal-RC simulation" width="820">
+
+| Parameter | Value |
+|---|---|
+| Ambient | 40 °C |
+| Wall thermal resistance | 4.28 K/W (25 mm EPS + VIP) |
+| PCM | 1.8 kg paraffin, 4.5 °C melt, 210 kJ/kg (378 kJ) |
+| Power | 30 W flexible PV, 12.8 V 6 Ah (76.8 Wh) LiFePO4 |
+| TEC duty | ~14 % |
+
+| Case | Result (simulated) |
+|---|---|
+| Open crate in sun | Reaches ~37 °C within 2 h |
+| Passive ice box | Leaves the 2-6 °C band at 4.3 h |
+| **FrostChain** | **Holds 4 ± 2 °C for 12 h at 40 °C ambient** |
+
+### Drift vs. tamper, edge-AI separation
+
+<img src="03_models_and_plots/FrostChain_AI_Drift_Tamper_Plot.png" alt="AI drift and tamper separation" width="820">
+
+| Panel | What it shows |
+|---|---|
+| **A** | Raw single-ended trace: ~2,450 µε of drift swamps the 100 µε tamper step by about 24× |
+| **B** | INT8 TCN output 1, reversible strain: drift and creep removed, both load events preserved, **16.8 µε RMS residual** (target ≤ 20 µε) |
+| **C** | INT8 TCN output 2, irreversible shift: flat until the lid-seal peel/cut at t = 9.7 h, then a persistent step crosses the 100 µε CUSUM threshold, **signed on-chain, payout held for review** |
+
+### Design targets
+
+| Metric | Target |
+|---|---|
+| Hold 4 ± 2 °C at 40 °C ambient | ≥ 8 h (simulated 12 h) |
+| ADC resolution at 10 Hz | ≥ 13 ENOB (measured), ≥ 15 ENOB (sim) |
+| INT8 vs FP32 | within 1 % |
+| Residual after correction | ≤ 20 µε RMS |
+| Latency | ≤ 2 s |
+| False alarms | ≤ 1 per 1000 device-hours |
+| Detectable tamper step | ≥ 100 µε-equivalent |
+| Bridge excitation | 20 ms per 1 s (2 % duty, ~5 µW average) |
+
+## 🔧 Hardware
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Mechanical** (`01_mechanical/`)
+- Crate: 400 × 300 × 280 mm food-grade HDPE with a 25 mm EPS/VIP liner
+- 4 PCM packs, 0.45 kg each
+- Solar Peltier lid with Al 6061 cold/hot heatsinks and a 12 V fan
+- E-skin tape on the lid seal and walls
+
+</td>
+<td width="50%" valign="top">
+
+**Electronics** (`02_electronics/`)
+- Tang Nano 9K (GW1NR-9): Σ-Δ ADC, CIC/MA, INT8 TCN, CUSUM
+- ESP32-S3: Peltier PWM, thermal cut-off, signing, uplink
+- SIM7600-class LTE + GNSS modem
+- Power: PV → MPPT → 4S LiFePO4 (12.8 V, 6 Ah) → F1 10 A → 12 V / 5 V / 4.0 V rails
+
+</td>
+</tr>
+</table>
+
+<img src="02_electronics/exports/FrostChain_Circuit_Schematic_v2.png" alt="System electronics schematic" width="900">
+
+*The schematic has five blocks: 1 Off-grid power, 2 Sense, 3 Decide, 4 Cool, 5 Settle. Values are design targets for SPICE and are not final.*
+
+## 🧾 Bill of materials
+
+Full itemised BOM: [`04_bom/FrostChain_Stage2_BOM.xlsx`](04_bom/FrostChain_Stage2_BOM.xlsx) (also `.csv`).
+
+| Subsystem | Cost (₹) |
+|---|---:|
+| Telemetry & FPGA compute | 4,480 |
+| Power & solar | 4,585 |
+| Crate & PCM thermal liner | 2,600 |
+| E-skin, PCB & passives | 1,485 |
+| Peltier & heatsinks | 1,050 |
+| **Total (Stage 2 prototype)** | **14,200** |
+
+Most parts are sourced domestically or locally, with 1-5 day lead times. The Tang Nano 9K is the main imported item.
+
+## ⚖️ Settlement logic
+
+```
+Quality Score = 100 − Σ(T_actual − T_target)·t − handling penalty
+```
+
+| Quality Score | Payout |
+|---|---|
+| > 90 | 100 % |
+| 70 – 90 | 80 % |
+| ≤ 70 | 50 % base |
+| Tamper flag raised | Held for review |
+
+Events are ECDSA-signed on the ESP32-S3 with GPS and anchored to a Solidity smart contract, so neither farmer nor buyer can alter the temperature or handling history.
+
+## 🛡️ Safety
+
+| Risk | Mitigation |
+|---|---|
+| Battery over-current / over-temperature | 4S BMS cut-off and 10 A fuse |
+| Peltier hot-side overheat or fan stall | Duty-limited PWM, hot-side NTC cut-off, fan-stall lockout |
+| Broken or peeled sensor | Separate FAULT state, never reported as tamper |
+| False tamper alarm | Network posterior + CUSUM persistence + healthy dummy trace |
+| Firmware hang / corrupted records | Watchdog, saturating fixed-point arithmetic, CRC on records |
+| No network coverage | Signed events stored and forwarded |
+| Electrical hazard | Low-voltage (12 V) design |
+
+## 🗂️ Repository map
+
+```
+frostchain-eskin-crate/
+├── 01_mechanical/        Fusion 360 model (.f3d), STEP, renders, FEA
+├── 02_electronics/       KiCad project, ERC/DRC reports, schematic exports, LTspice model
+├── 03_models_and_plots/  Simulation plots and the scripts that generate them
+├── 04_bom/               Itemised BOM (.xlsx and .csv)
+└── 05_docs/              Stage 1 proposal, evidence photos
+```
+
+## 🚦 Project status
+
+| Item | Status | Where |
+|---|---|---|
+| Crate + electronics-bay CAD (Fusion 360 / STEP) | ✅ Modelled (v2) | `01_mechanical/` |
+| Thermal-RC hold simulation | ✅ Synthetic / sim | `03_models_and_plots/` |
+| AI drift / tamper separation | ✅ Synthetic behavioural model | `03_models_and_plots/` |
+| System schematic | ✅ Design-target diagram v2 | `02_electronics/exports/` |
+| Itemised BOM | ✅ 20 line items | `04_bom/` |
+| Half-bridge drift model (LTspice) | 🟡 Bridge + integrator cap; Σ-Δ loop model pending | `02_electronics/spice/` |
+| FEA | ⬜ Not yet added | `01_mechanical/fea/` |
+| KiCad project + ERC/DRC | ⬜ Not yet added | `02_electronics/kicad/`, `drc/` |
+| Verilog RTL + golden model | ⬜ Planned | n/a |
+| Prototype build and measured data | ⬜ Stage 3 | n/a |
+
+**Roadmap** (from the Stage 1 plan):
+- [x] Phase 1: behavioural and thermal simulation
+- [ ] Phase 2: Verilog Σ-Δ front end, CIC³, MA-5, phase/chop sequencer; build E-skin tape pairs and the PCM/Peltier crate
+- [ ] Phase 3: INT8 TCN, CUSUM guard, ESP32-S3 uplink, Solidity contract on a testnet
+- [ ] Phase 4: heat/humidity cycling, load and peel/cut tamper tests, live end-to-end demo (crate → tamper event → on-chain payout change)
+
+## ▶️ Opening and reproducing
+
+| File | Open with |
+|---|---|
+| `.f3d` | Autodesk Fusion 360 |
+| `.step` | Any CAD package |
+| `.asc` | LTspice |
+| `.kicad_*` | KiCad `[VERSION]` |
+
+Plot reproduction: `[RUN COMMANDS, to be added with the scripts in 03_models_and_plots/scripts/]`
+
+**Demo and videos (external links only):** `[LINK]`
+
+## 👥 Team
+
+| Name | Role |
+|---|---|
+| `[NAME]` | `[ROLE]` |
+
+Faculty mentor: `[NAME, DEPARTMENT]`
+
+## 📄 License
+
+MIT, see [`LICENSE`](LICENSE).
+
 ---
 
-## 6. Author & Institutional Sign-Off
-* **Lead Maker:** Shubham Mishra (B.Tech ECE — VLSI, Roll No: `24294917076`)
-* **Institution:** Faculty of Technology, University of Delhi
-* **Event:** Maker Bhavan Foundation — **Vishwakarma Awards 2026-27** (Stage 2 Submission)
+<div align="center"><sub>FrostChain E-Skin Crate · Vishwakarma Awards 2026-27 · Stage 2</sub></div>
