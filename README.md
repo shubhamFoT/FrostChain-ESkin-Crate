@@ -39,7 +39,10 @@
 
 Fruit and vegetables are lost between the farm gate and the collection centre because no low-cost, off-grid crate both **holds produce near 4 °C** and **produces tamper-proof evidence** of its temperature and handling history. Without that evidence, quality disputes are settled by haggling, and the farmer is underpaid.
 
+<<<<<<< HEAD
 > Official post-harvest loss estimates for India (ICAR-CIPHET 2015): fruits 6.7–15.9 %, vegetables 4.6–12.4 %.
+=======
+>>>>>>> 00bf05028962c07cbb460d1989c2c7dffe731bc3
 
 **Who it is for:** smallholder farmers and FPOs, first-mile aggregators, buyers and retailers, and berry, dairy or pharma shippers who need audited cold-chain proof.
 
@@ -253,4 +256,7 @@ MIT, see [`LICENSE`](LICENSE).
 
 ---
 
+<<<<<<< HEAD
 <div align="center"><sub>FrostChain E-Skin Crate · Vishwakarma Awards 2026-27 · Stage 2</sub></div>
+=======
+>>>>>>> 00bf05028962c07cbb460d1989c2c7dffe731bc3
