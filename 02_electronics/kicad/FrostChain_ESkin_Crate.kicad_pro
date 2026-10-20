@@ -8,7 +8,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "Stage 2 — 1.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -423,14 +423,20 @@
     "reuse_designators": true,
     "subpart_first_id": 65,
     "subpart_id_separator": 0,
-    "top_level_sheets": [],
+    "top_level_sheets": [
+      {
+        "filename": "FrostChain_ESkin_Crate.kicad_sch",
+        "name": "FrostChain_ESkin_Crate",
+        "uuid": "54559df7-2e59-4599-b7bf-022a42dfa5f4"
+      }
+    ],
     "used_designators": "",
     "variants": []
   },
   "sheets": [
     [
-      "c0f369bf-ffdb-4664-b0c6-de8268a7da86",
-      "Root"
+      "54559df7-2e59-4599-b7bf-022a42dfa5f4",
+      "FrostChain_ESkin_Crate"
     ]
   ],
   "text_variables": {},
