@@ -238,9 +238,6 @@ frostchain-eskin-crate/
 | `.asc` | LTspice |
 | `.kicad_*` | KiCad  |
 
-Plot reproduction: `[RUN COMMANDS, to be added with the scripts in 03_models_and_plots/scripts/]`
-
-**Demo and videos (external links only):** `[LINK]`
 
 
 ## 📄 License
