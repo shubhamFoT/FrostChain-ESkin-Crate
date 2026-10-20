@@ -11,7 +11,7 @@
 ![Status](https://img.shields.io/badge/Status-Design_%26_Simulation-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-**Application ID:** `[APPLICATION ID]` · **Team ID:** `[TEAM ID]` · **Track:** `[TRACK]`
+**Application ID:** `VK26-IITH-SC-0507` · **Track:** `Smart Urban Infrastructure & Asset Tracking`
 
 <img src="01_mechanical/renders/FrostChain_ESkin_Crate_v2_Final.png" alt="FrostChain E-Skin Crate, CAD render" width="720">
 
