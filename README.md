@@ -151,7 +151,7 @@ flowchart LR
 </tr>
 </table>
 
-<img src="02_electronics/exports/FrostChain_Circuit_Schematic_v2.png" alt="System electronics schematic" width="900">
+<img src="FrostChain-ESkin-Crate/02_electronics/exports/schematic.jpg" alt="System electronics schematic" width="900">
 
 *The schematic has five blocks: 1 Off-grid power, 2 Sense, 3 Decide, 4 Cool, 5 Settle. Values are design targets for SPICE and are not final.*
 
