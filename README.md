@@ -202,7 +202,7 @@ Events are ECDSA-signed on the ESP32-S3 with GPS and anchored to a Solidity smar
 ```
 frostchain-eskin-crate/
 ├── 01_mechanical/        Fusion 360 model (.f3d), STEP, renders, FEA
-├── 02_electronics/       KiCad project, ERC/DRC reports, schematic exports, LTspice model
+├── 02_electronics/       KiCad project, schematic exports, LTspice model
 ├── 03_models_and_plots/  Simulation plots and the scripts that generate them
 ├── 04_bom/               Itemised BOM (.xlsx and .csv)
 └── 05_docs/              Stage 1 proposal
